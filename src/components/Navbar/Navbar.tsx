@@ -121,29 +121,31 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="h-[6.5625rem] md:h-[136px] bg-[#2458a6] ">
-      <div className="w-full h-full grid grid-cols-2 md:grid-cols-3">
+      <div className="w-full h-full grid grid-cols-2 justify-center-center lg:flex lg:justify-evenly">
         {/* LOGO */}
-        <div className="col-span-1 flex items-center justify-center">
+        <div className="flex items-center ml-8 lg:ml-0 lg:justify-center">
           <Link to="/">
             <img src={LAMBHVACLOGO} alt="LambHVAC Logo" className="w-[9rem] md:w-[10rem] xl:w-auto" />
           </Link>
         </div>
         {/* NAV */}
-        <div className="col-span-2 items-end hidden lg:grid">
-          {/* Phone Click */}
-          <div className="flex justify-end">
-            <a href="tel:+18562174920" className="py-4 mx-4 px-8 rounded-lg text-2xl bg-white tracking-wider font-semibold">
-              (856)-217-4920
-            </a>
+        <div className="hidden lg:block h-full">
+          <div className="grid max-w-3xl justify-center items-end h-full">
+            {/* Phone Click */}
+            <div className="flex justify-end">
+              <a href="tel:+18562174920" className="py-4 mx-4 px-8 rounded-lg text-2xl bg-white tracking-wider font-semibold">
+                (856)-217-4920
+              </a>
+            </div>
+            <nav className="flex justify-end gap-4 ">
+              {navLinks.map((navlink) => (
+                <NavLink key={navlink.title} {...navlink} />
+              ))}
+            </nav>
           </div>
-          <nav className="flex justify-center gap-4 ">
-            {navLinks.map((navlink) => (
-              <NavLink key={navlink.title} {...navlink} />
-            ))}
-          </nav>
         </div>
         {/* Mobile Burger */}
-        <div className="lg:hidden md:col-span-2 flex items-center justify-end pr-4">
+        <div className="lg:hidden flex items-center justify-end pr-8">
           <Burger onClick={displayNavToggle} />
         </div>
       </div>
@@ -158,9 +160,9 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex justify-end">
-        <a href="tel:+18562174920">
-          <span className="mx-auto inline-block py-4 mx-4 px-8 text-2xl bg-white border-b-4 border-x-4 border-gray-300 tracking-wider font-semibold">Call (856)-217-4920</span>
-        </a>
+          <a href="tel:+18562174920">
+            <span className="mx-auto inline-block py-4 mx-4 px-8 text-2xl bg-white border-b-4 border-x-4 border-gray-300 tracking-wider font-semibold">Call (856)-217-4920</span>
+          </a>
         </div>
       </div>
     </div>
