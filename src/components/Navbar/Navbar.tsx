@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="h-[6.5625rem] md:h-[136px] bg-[#2458a6] ">
+    <header className="h-[6.5625rem] md:h-[136px] bg-[#2458a6] ">
       <div className="w-full h-full grid grid-cols-2 justify-center-center lg:flex lg:justify-evenly">
         {/* LOGO */}
         <div className="flex items-center ml-8 lg:ml-0 lg:justify-center">
@@ -165,7 +165,7 @@ const Navbar: React.FC = () => {
           </a>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
