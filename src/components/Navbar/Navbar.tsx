@@ -51,6 +51,7 @@ const navLinks: NavLinkProps[] = [
   {
     title: "Contact",
     path: "/contact",
+    sublinks: [{ title: "Request Service", path: "/contact/request-service" }],
   },
 ];
 const NavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
@@ -116,7 +117,7 @@ const MobileNavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
 const Navbar: React.FC = () => {
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const displayNavToggle = () => {
-    if (mobileNavRef.current) mobileNavRef.current.classList.toggle("nav-not-active");
+    mobileNavRef?.current?.classList.toggle("nav-not-active");
   };
 
   return (
