@@ -19,13 +19,15 @@ const PictureText: React.FC<PictureTextProps> = ({ variant, src, alt, heading, b
   let component: React.ReactNode = null;
   const [isReverse, setIsReverse] = useState(reverse);
 
-  useDebouncedResize(() => {
+  const resizeFunc = () => {
     if (innerWidth <= 1024) {
       setIsReverse(false);
     } else {
       setIsReverse(reverse);
     }
-  }, 100);
+  };
+  useDebouncedResize(resizeFunc, 100);
+  useEffect(resizeFunc, []);
 
   switch (variant) {
     case "50_50":

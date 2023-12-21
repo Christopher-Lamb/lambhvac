@@ -15,7 +15,6 @@ function debounce<F extends (...args: any[]) => void>(func: F, delay: number): (
 function useDebouncedResize(effect: (...args: any[]) => void, delay: number) {
   useEffect(() => {
     const debouncedEffect = debounce(effect, delay);
-    effect();
 
     window.addEventListener("resize", debouncedEffect);
 

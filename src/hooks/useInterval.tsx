@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function useInterval(callback, delay) {
-  const intervalRef = React.useRef();
+export default function useInterval(callback: () => void, delay: number) {
+  const intervalRef = React.useRef<number>();
   const callbackRef = React.useRef(callback);
 
   // Remember the latest callback:
@@ -20,10 +20,7 @@ export default function useInterval(callback, delay) {
 
   React.useEffect(() => {
     if (typeof delay === "number") {
-      intervalRef.current = window.setInterval(
-        () => callbackRef.current(),
-        delay
-      );
+      intervalRef.current = window.setInterval(() => callbackRef.current(), delay);
 
       // Clear interval if the components is unmounted or the delay changes:
       return () => window.clearInterval(intervalRef.current);
