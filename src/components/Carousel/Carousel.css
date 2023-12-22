@@ -5,3 +5,20 @@
 .car-arrow-cont {
   background-color: rgba(39, 39, 42, 0.33);
 }
+
+/* .car-grid-temp-col-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.car-grid-temp-col-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.car-grid-temp-col-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+} */
+
+.car-container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  padding: 0 10.25rem;
+}

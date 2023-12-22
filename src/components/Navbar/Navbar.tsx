@@ -105,7 +105,7 @@ const MobileNavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
       </li>
       <ul ref={subLinksRef} className="nav-not-active grid ">
         {sublinks?.map(({ title, path }) => (
-          <Link to={path}>
+          <Link to={path} key={path}>
             <li className="px-8 py-1 text-xl border-b-[1px] border-blue-200">{title}</li>
           </Link>
         ))}

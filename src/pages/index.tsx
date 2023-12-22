@@ -7,8 +7,8 @@ import IMAGE from "../images/icon.png";
 import LOGO from "../images/lamb_logox192.png";
 import PictureText from "../components/PictureText";
 import Button from "../components/Button";
-import Carousel from "../components/Carousel";
-
+import Carousel from "../components/Carousel/Carousel";
+import Carousel2 from "../utils/Carousel/Carousel.js";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -48,7 +48,8 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </PictureText>
       </div>
-      <Carousel />
+      <Carousel height="400px" variant="reviews" />
+      {/* <Carousel2 /> */}
       <div className="h-[600px] w-full"></div>
     </main>
   );
