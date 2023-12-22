@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+
+html{
+  overflow-x: hidden;
+}
 
 .kanit {
   font-family: "Kanit", sans-serif;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+:root {
+  --lambblue: #2458a6;
 }

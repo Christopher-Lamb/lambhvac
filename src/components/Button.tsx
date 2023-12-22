@@ -1,7 +1,7 @@
 import { Link } from "gatsby-link";
 import React from "react";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   varient?: string;
   href?: string;
   className?: string;
@@ -9,7 +9,7 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ varient, href, className, onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({ varient, href, className, onClick, children, ...other }) => {
   let styles: string = "";
 
   const outline = "";
@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({ varient, href, className, onClick, chil
         </div>
       ) : (
         <div>
-          <button onClick={onClick} className={`text-white ${className} ${styles}`}>
+          <button onClick={onClick} className={`text-white ${styles} ${className}`} {...other}>
             {children}
           </button>
         </div>

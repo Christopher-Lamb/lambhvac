@@ -37,7 +37,6 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
   const [count, setCount] = useState<number>(0);
   const [positionArray, setPositionArray] = useState<number[]>([]);
 
-  debugger;
   //Debounce Function for resizing
   const handleResize = async (e: UIEvent) => {
     const newLength = carouselSpliter();
@@ -189,6 +188,7 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
   const handleLeft = () => {
     if (!canChange) return;
     //Move scroll bar to left
+    clearInterval(intervalId.current);
     const position = arrayLoop("negative");
     //Change Scroll Position
     const newScrollPosition = window.innerWidth * position;
@@ -202,7 +202,7 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
   };
 
   return (
-    <div className="h-[600px] select-none w-full" style={{ height }}>
+    <div className="h-[600px] select-none w-full overflow-hidden" style={{ height }}>
       <div className="relative w-full h-full">
         <div className="carousel-btns absolute h-full w-full flex items-center justify-between">
           <div className={"h-full flex items-center w-fit z-[1] car-arrow-contx"}>
@@ -212,7 +212,7 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
           </div>
           <div className={"h-full flex items-center w-fit z-[1] car-arrow-contx"}>
             <button onClick={handleRight} aria-label="Scroll right">
-              <BsChevronRight className="relative cursor-pointer w-8 h-8 sm:h-16 sm:w-16 fill-white hover:scale-110" />
+              <BsChevronRight className="relative cursor-pointer w-8 h-8 sm:h-16 sm:w-16 fill-white hover:scale-110 lg:left-[10px]" />
             </button>
           </div>
         </div>
@@ -226,13 +226,13 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
               <div
                 key={i}
                 style={{ width: `${window.innerWidth}px` }}
-                className={`relative row-start-1 w-full h-full snap-center flex items-center justify-center s${colors[colorPos]} ${bgColor}z ${className} text-white`}
+                className={`relative row-start-1 w-full h-full snap-center flex items-center justify-center ${colors[colorPos]} ${bgColor}z ${className} text-white`}
               >
                 {/* {position} */}
-                <div ref={containerRef} className="car-container " style={{ gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))` }}>
+                <div ref={containerRef} className="car-container gap-4 px-10 sm:px-16 lg:px-40)" style={{ gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))` }}>
                   {/* <div className="bg-white w-full flex items-center justify-center text-black text-center pt-8 border">{items[position][0].name}</div>
                   <div className="bg-white w-full flex items-center justify-center text-black text-center pt-8 border">{items[position][0].name}</div> */}
-                  <div className="absolute bg-gray-700 h-24 w-96 top-0">
+                  <div className="absolute bg-gray-700 h-24 w-96 top-0 hidden" aria-hidden="true" hidden>
                     <p>
                       Position: <span className="font-bold text-lg">{position}</span>
                     </p>
@@ -246,9 +246,9 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
                   {items[position].map((props, i) => {
                     const Componet = variants[variant].component;
                     return (
-                      <div key={i} className="bg-white w-full flex items-center justify-center text-black text-center pt-8 border">
-                        <Componet {...props} />
-                      </div>
+                      // <div key={i} className="bg-white w-full flex items-center justify-center text-black text-center pt-8 border">
+                      // </div>
+                      <Componet {...props} />
                     );
                   })}
                 </div>

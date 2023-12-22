@@ -1,0 +1,15 @@
+.img-card-cont {
+  background-color: rgb(250, 250, 250);
+  width: 5300psx;
+}
+
+.img-card-cont:hover {
+  transform: scale(1.05);
+  transition: 300ms;
+}
+
+.img-card-cont:hover .read-more-btn {
+  background: var(--lambblue);
+  color: white;
+  border: none;
+}
