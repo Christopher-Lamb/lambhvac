@@ -10,6 +10,7 @@ import Button from "../components/Button";
 import Carousel from "../components/Carousel/Carousel";
 import { ImageCard, ImageCardContainer } from "../components/ImageCard/ImageCard";
 import { Form, Input, TextArea, FieldSet, Select } from "../components/Form";
+import Footer from "../components/Footer";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -107,7 +108,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </Button>
       </Form>
 
-      <div className="h-[600px] w-full"></div>
+      <Footer />
     </main>
   );
 };

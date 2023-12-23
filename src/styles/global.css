@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+:root {
+  --lambblue: #2458a6;
+  --lambbluedarker: #1a4381;
+  --dogwood: #ffd9ce;
+  --lightbrown: #f4a461;
+  --sandybrown: #f4a460;
+}
 
-html{
+html {
   overflow-x: hidden;
 }
 
@@ -14,8 +21,4 @@ html{
 
 .weight-500 {
   font-weight: 500;
-}
-
-:root {
-  --lambblue: #2458a6;
 }
