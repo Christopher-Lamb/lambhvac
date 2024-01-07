@@ -71,7 +71,7 @@ const NavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
         <span className="kanit lg:text-xl text-white hover:text-blue-100 pb-2 block">{title}</span>
       </Link>
       {sublinks && (
-        <ul ref={sublinkRef} style={{ display: "none" }} className="bg-white absolute flex flex-col shadow p-4 gap-2 lg:text-lg">
+        <ul ref={sublinkRef} style={{ display: "none" }} className="bg-white z-[999] absolute flex flex-col shadow p-4 gap-2 lg:text-lg">
           {sublinks.map(({ title, path }) => (
             <li key={title}>
               <Link to={path}>{title}</Link>
@@ -93,7 +93,7 @@ const MobileNavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
 
   return (
     <>
-      <li className="w-full flex space-around items-center border-b-2 border-blue-200">
+      <li className="relative z-[999] bg-blue-100 w-full flex space-around items-center border-b-2 border-blue-200">
         <Link to={path} className="w-full px-4 py-2">
           <span className="inline-block cursor-pointer text-xl kanit">{title}</span>
         </Link>
@@ -103,7 +103,7 @@ const MobileNavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
           </button>
         )}
       </li>
-      <ul ref={subLinksRef} className="nav-not-active grid ">
+      <ul ref={subLinksRef} className="nav-not-active relative grid z-[999] bg-blue-100">
         {sublinks?.map(({ title, path }) => (
           <Link to={path} key={path}>
             <li className="px-8 py-1 text-xl border-b-[1px] border-blue-200">{title}</li>
@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="h-[6.5625rem] md:h-[136px] bg-[#2458a6] ">
+    <header className="h-[6.5625rem] md:h-[136px] bg-[var(--lambblue)] ">
       <div className="w-full h-full grid grid-cols-2 justify-center-center lg:flex lg:justify-evenly">
         {/* LOGO */}
         <div className="flex items-center ml-8 lg:ml-0 lg:justify-center">
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end relative z-[998]">
           <a href="tel:+18562174920">
             <span className="mx-auto inline-block py-4 mx-4 px-8 text-2xl bg-white border-b-4 border-x-4 border-gray-300 tracking-wider font-semibold">Call (856)-217-4920</span>
           </a>

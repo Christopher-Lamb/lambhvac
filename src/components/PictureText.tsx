@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import useDebouncedResize from "../hooks/useDebounceResize";
 import Button from "./Button";
+import Image from "../components/Image";
 
 interface PictureTextProps {
   variant: "50_50" | "60_40" | "40_60";
-  src: string;
-  alt?: string;
+  fileName: string;
+  alt: string;
   heading: string;
   body: string;
   reverse?: boolean;
@@ -14,7 +15,7 @@ interface PictureTextProps {
   children?: React.ReactNode;
 }
 
-const PictureText: React.FC<PictureTextProps> = ({ variant, src, alt, heading, body, children, color, reverse = false, background }) => {
+const PictureText: React.FC<PictureTextProps> = ({ variant, fileName, alt, heading, body, children, color, reverse = false, background }) => {
   const style: string = "60_40";
   let component: React.ReactNode = null;
   const [isReverse, setIsReverse] = useState(reverse);
@@ -39,7 +40,7 @@ const PictureText: React.FC<PictureTextProps> = ({ variant, src, alt, heading, b
             </div>
           )}
           <div className={"h-full w-full"}>
-            <img src={src} alt={alt} className="w-full" />
+            <Image fileName={fileName} alt={alt} />
           </div>
           {!isReverse && (
             <div className={background + " h-full"}>
@@ -58,7 +59,7 @@ const PictureText: React.FC<PictureTextProps> = ({ variant, src, alt, heading, b
             </div>
           )}
           <div className={"h-full lg:col-span-2"}>
-            <img src={src} alt={alt} className="w-full" />
+            <Image fileName={fileName} alt={alt} />
           </div>
           {!isReverse && (
             <div className={background + " h-full lg:col-span-3"}>
@@ -77,7 +78,7 @@ const PictureText: React.FC<PictureTextProps> = ({ variant, src, alt, heading, b
             </div>
           )}
           <div className={"h-full lg:col-span-3"}>
-            <img src={src} alt={alt} className="w-full" />
+            <Image fileName={fileName} alt={alt} />
           </div>
           {!isReverse && (
             <div className={background + " h-full lg:col-span-2"}>

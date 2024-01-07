@@ -25,7 +25,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </div>
       <PictureText
         variant="40_60"
-        src={LOGO}
+        fileName="House.jpg"
         color="#000"
         alt="Logo"
         heading="TDolore commodo amet aliqua"
@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <PictureText
           reverse
           variant="50_50"
-          src={LOGO}
+          fileName="House.jpg"
           color="#000"
           alt="Logo"
           heading="TDolore commodo amet aliqua"
@@ -54,7 +54,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div className="xl:max-w-7xl mx-auto container">
         <PictureText
           variant="40_60"
-          src={LOGO}
+          fileName="House.jpg"
           color="#000"
           alt="Logo"
           heading="TDolore commodo amet aliqua"
