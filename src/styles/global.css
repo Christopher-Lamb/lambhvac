@@ -22,3 +22,10 @@ html {
 .weight-500 {
   font-weight: 500;
 }
+
+.lamb-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: var(--lambblue);
+  box-shadow: 3px 3px 1px #FFC594;
+}

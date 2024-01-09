@@ -37,9 +37,9 @@ const quickLinks: quickLinkProps[] = [
 
 const titleClass = "block text-2xl kanit weight-500";
 
-const Footer: React.FC = () => {
+const Footer: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <footer className="text-white bg-[var(--lambblue)] ">
+    <footer className={"text-white bg-[var(--lambblue)] " + className}>
       <div className="absolute h-5  w-full bg-[var(--lambbluedarker)] " />
       <div className="px-4 py-20 grid gap-4 max-w-6xl mx-auto container">
         <div className="w-[350px] flex justify-center mb-5">
