@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
-import "./index.css";
 import { Form, Input, TextArea, FieldSet, Select } from "../../components/Form";
 import Button from "../../components/Button";
 import FlAMEANDSNOW from "../../assets/flameAndSnow.svg";

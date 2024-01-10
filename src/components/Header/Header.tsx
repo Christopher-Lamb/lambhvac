@@ -76,17 +76,17 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
             {handlePathname().map(({ name, href, active }) => {
               if (active)
                 return (
-                  <li aria-current="page" className="font-bold select-none">
+                  <li key={name} aria-current="page" className="font-bold select-none">
                     {name}
                   </li>
                 );
               return (
-                <>
+                <React.Fragment key={name}>
                   <li className="hover:text-gray-200">
                     <Link to={href}>{name}</Link>
                   </li>
                   <span className="select-none">|</span>
-                </>
+                </React.Fragment>
               );
             })}
           </ul>

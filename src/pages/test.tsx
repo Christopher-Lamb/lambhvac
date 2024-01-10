@@ -2,6 +2,7 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header/Header";
 import PictureText from "../components/PictureText";
+import Bullets from "../components/Bullets/Bullets";
 
 const ContactPage: React.FC<PageProps> = () => {
   return (
@@ -17,6 +18,18 @@ const ContactPage: React.FC<PageProps> = () => {
           // imgVariant="icon-rounded"
           variant="icon"
           imgVariant="rounded"
+        />
+        <Bullets
+          array={[
+            ["The quick brown fox jumps over a lazy dog near the riverbank.", "Unexpectedly, the thunderstorm ruined their sunny beach day."],
+            ["Every moment is a fresh beginning in the journey of life.", "In a world of change, learning is the only constant."],
+            [
+              "The old oak tree stood tall, witnessing centuries pass by.",
+              "Laughter aLaboNon quis laborum excepteur eu irure aliquip ut proident exercitation et eu sint. Officia commodo id sunt eiusmod consectetur id voluptate mollit voluptate dolore. Consectetur consectetur consequat dolor excepteur Lorem ex minim ex tempor enim sint incididunt minim. Aliqua minim Lorem veniam laboris cillum consequat culpa enim pariatur magna. Et Lorem Lorem exercitation cillum occaecat ad nostrud. aute commodo ea tempor ex. Nulla dolore eiusmod elit incididunt esse elit duis duis enim voluptate dolor eiusmod.nd joy filled the room during the family reunion.",
+            ],
+          ]}
+          margin="8"
+          variant="circle"
         />
       </div>
     </>
