@@ -24,7 +24,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <LinkBox href={"/"} src={IMAGE} alt="Aint nothing but nothing" />
       </div>
       <PictureText
-        variant="40_60"
+        variant="40-60"
         fileName="House.jpg"
         color="#000"
         alt="Logo"
@@ -38,7 +38,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div className="max-w-7xl mx-auto">
         <PictureText
           reverse
-          variant="50_50"
+          variant="50-50"
           fileName="House.jpg"
           color="#000"
           alt="Logo"
@@ -53,7 +53,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Carousel height="400px" variant="reviews" interval={false} />
       <div className="xl:max-w-7xl mx-auto container">
         <PictureText
-          variant="40_60"
+          variant="40-60"
           fileName="House.jpg"
           color="#000"
           alt="Logo"

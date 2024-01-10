@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import PictureText from "../../components/PictureText";
+import TextBlock from "../../components/TextBlock";
 
 const ContactPage: React.FC<PageProps> = () => {
   return (
@@ -41,8 +42,8 @@ const ContactPage: React.FC<PageProps> = () => {
         <p>Bulleted Info</p>
       </section>
 
-      <section>
-        <h2>Brands</h2>
+      <section className="cont mx-auto text-center">
+        <TextBlock heading="Why choose us?" className="kanit">HelEt ullamco occaecat consequat non do ullamco minim ex cupidatat ipsum. Nisi consectetur ea laboris ea ea voluptate minim in irure. Tempor reprehenderit dolore nostrud nostrud. Nostrud in veniam dolore sunt aute ut ipsum exercitation pariatur aliqua sit.Occaecat incididunt deserunt incididunt ad consectetur ea sit labore ullamco sit nisi officia proident. Veniam ipsum veniam veniam magna ullamco laborum laborum aliquip est officia. Deserunt magna amet tempor ad cillum sit tempor commodo nulla nostrud sit tempor ut aliquip. Laborum et excepteur deserunt laboris magna commodo aliqua minim eu esse Lorem.lo</TextBlock>
       </section>
     </>
   );
