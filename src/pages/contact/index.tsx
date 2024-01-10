@@ -5,9 +5,9 @@ import Header from "../../components/Header/Header";
 import "./index.css";
 import { Form, Input, TextArea, FieldSet, Select } from "../../components/Form";
 import Button from "../../components/Button";
-import FlAMEANDSNOW from "./flameAndSnow.svg";
+import FlAMEANDSNOW from "../../assets/flameAndSnow.svg";
 import Footer from "../../components/Footer";
-import Trapezoid from "./Trapezoid";
+import Trapezoid from "../../components/Trapezoid";
 import useDebouncedResize from "../../hooks/useDebounceResize";
 import Carousel from "../../components/Carousel/Carousel";
 
@@ -123,7 +123,7 @@ const ContactPage: React.FC<PageProps> = () => {
             <div className="bg-white absolute w-5 h-5 top-[70px] left-[92px]" />
           </div>
         </div>
-      <Carousel height="400px" variant="reviews" interval={false} />
+        <Carousel height="400px" variant="reviews" interval={false} />
       </div>
       <Footer className="mt-16" />;
     </>

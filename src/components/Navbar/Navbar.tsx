@@ -12,6 +12,7 @@ interface NavLinkProps {
 }
 
 const navLinks: NavLinkProps[] = [
+  { title: "Test", path: "/test/" },
   {
     title: "Air Conditioning",
     path: "/air-conditioning",
