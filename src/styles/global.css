@@ -30,7 +30,8 @@ html {
   box-shadow: 3px 3px 1px #ffc594;
 }
 
-p.text {
+p.text,
+span.text {
   font-size: 1rem;
 }
 
@@ -73,7 +74,8 @@ h3.text {
   .cont {
     max-width: 72rem;
   }
-  p.text {
+  p.text,
+  span.text {
     font-size: 1.125rem;
   }
   h3.text {
