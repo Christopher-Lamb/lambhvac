@@ -41,12 +41,14 @@ h3.text {
 
 .cont {
   width: 100%;
+  padding: 0 1rem;
 }
 
 /* SM */
 @media (min-width: 640px) {
   .cont {
     max-width: 40rem;
+    padding: 0;
   }
 }
 

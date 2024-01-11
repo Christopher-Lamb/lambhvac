@@ -23,3 +23,19 @@
   background-color: var(--lambblue);
   box-shadow: 2px 2px 1px #ffc594;
 }
+
+.bullet-snowflake {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  /* border-radius: 150%; */
+  background-image: url("../../images/snowflake16x16.png");
+}
+
+.bullet-fire {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  /* border-radius: 150%; */
+  background-image: url("../../images/flame16x16.png");
+}

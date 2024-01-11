@@ -5,7 +5,7 @@ type arrayOfStringPairs = [string, string];
 
 interface BulletsProps {
   array: string[] | arrayOfStringPairs[];
-  variant?: "square" | "round" | "circle";
+  variant?: "square" | "round" | "circle" | "snowflake" | "fire";
   layout?: "grid" | "none";
   margin?: string | number;
   className?: string;
@@ -32,6 +32,12 @@ const Bullets: React.FC<BulletsProps> = ({ array, margin, variant = "square", la
     case "circle":
       bulletClass += "bullet-circle";
       break;
+    case "snowflake":
+      bulletClass += "bullet-snowflake";
+      break;
+    case "fire":
+      bulletClass += "bullet-fire";
+      break;
     default:
       break;
   }
@@ -52,7 +58,6 @@ const Bullets: React.FC<BulletsProps> = ({ array, margin, variant = "square", la
     <>
       <ul className={`${className ? className : " text-md lg:text-lg "} ${ulClass} pr-8`} style={{ marginLeft: `${margin ? parseToInt(margin) * 4 : ""}px` }}>
         {array.map((item, i) => {
-          console.log(item);
           if (Array.isArray(item)) {
             const [heading, text] = item;
             return (
@@ -68,7 +73,7 @@ const Bullets: React.FC<BulletsProps> = ({ array, margin, variant = "square", la
             );
           } else if (typeof item === "string") {
             return (
-              <li key={i} className="flex gap-3 items-center mt-1">
+              <li key={i} className="flex gap-3 mt-1">
                 <div className={"mt-1.5 " + bulletClass} />
                 <span className="">{item}</span>
               </li>
