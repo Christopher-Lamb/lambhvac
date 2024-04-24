@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PageProps, HeadFC } from "gatsby";
+import { PageProps, HeadFC, Link } from "gatsby";
 import Header from "../../components/Header/Header";
 import cities from "../../utils/service-contract-cities";
 import useDebouncedResize from "../../hooks/useDebounceResize";
@@ -49,16 +49,18 @@ const LocationCheckPage: React.FC<PageProps> = () => {
     <>
       <Header title="Location Check" />
       <section className="cont lg:max-w-4xl mx-auto">
-        <span className="text block text-center mt-4">Please select a location from the list to confirm our service availability in your area of New Jersey.</span>
+        <span className="text block text-center mt-4">
+          <strong className="font-semibold">Please select a location from the list to confirm our service availability in your area of New Jersey.</strong>
+        </span>
         <span className="block text-center mb-4">If your specific location is not listed, we regret to inform you that our services do not currently extend to that area.*</span>
         <ul className="grid grid-cols-1 px-4 lg:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {reorderedArray.map((location, i) => {
             console.log(reorderedArray.length);
             return (
-              <div className="flex gap-2 items-center font-semibold hover:scale-[1.1] hover:ml-4 hover:underline cursor-pointer">
+              <div className="flex gap-2 items-center font-semibold hover:scale-[1.1] hover:ml-4 hover:md:ml-3 hover:xl:ml-2 hover:underline cursor-pointer">
                 <div className="lamb-bullet rounded-2xl shrink-0" style={{ width: "9px", height: "9px" }} />
                 <li className="capitalize text-lg">
-                  <a>{location}</a>
+                  <Link to="/service-contracts/terms">{location}</Link>
                 </li>
               </div>
             );

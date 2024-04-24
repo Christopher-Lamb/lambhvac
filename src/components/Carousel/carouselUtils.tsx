@@ -3,7 +3,6 @@ function splitArrayIntoChunks<T>(arr: T[], chunkSize: number): T[][] {
   for (let i = 0; i < arr.length; i += chunkSize) {
     result.push(arr.slice(i, i + chunkSize));
   }
-  console.log("result:", result);
   return result;
 }
 
@@ -16,7 +15,6 @@ const stateDistrubuter = (arr: any[], items: (array: any[]) => void, count: (num
 const chunckStateDistributer = (arr: any[], chunkSize: number, itemsFunc: (array: any[]) => void, countFunc: (number: number) => void, arrFunc: (array: any[]) => void): void => {
   const newArr = splitArrayIntoChunks(arr, chunkSize);
   stateDistrubuter(newArr, itemsFunc, countFunc, arrFunc);
-  console.log("funcs:", [itemsFunc, countFunc, arrFunc]);
 };
 
 export { chunckStateDistributer, splitArrayIntoChunks, stateDistrubuter };

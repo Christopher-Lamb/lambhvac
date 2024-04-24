@@ -24,11 +24,12 @@ interface CarouselProps {
   bgColor?: string;
   variant?: "reviews";
   interval?: boolean;
+  margin?: string;
   intervalTime?: number;
 }
 const variants = { reviews: { arr: ReviewArr, component: ReviewCard } };
 
-const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColor = "bg-white", variant = "reviews", interval = true, intervalTime = 8000 }) => {
+const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColor = "bg-[var(--lambblue)]", variant = "reviews", interval = true, intervalTime = 8000, margin }) => {
   const [canChange, setCanChange] = useState(true);
   const scrollbarRef = useRef<HTMLDivElement>(null);
   const [gridCols, setGridCols] = useState(3);
@@ -40,7 +41,6 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
   //Debounce Function for resizing
   const handleResize = async (e: UIEvent) => {
     const newLength = carouselSpliter();
-    // console.log("COUNT:", count);
     // const position = count + 1;
     // setCount(position);
     // //This will re-adjust the sizes of the boxes using two moves a forward and a backwards
@@ -66,7 +66,6 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
     carouselSpliter();
     clearInterval(intervalId.current);
     //Initalizes it in the correct position
-    console.log("loaded once");
   }, []);
   //Takes the input array and chuncks it and sets state accordingly
   const carouselSpliter = (): number => {
@@ -95,16 +94,14 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
   };
 
   const distributeState = (arr: any[]) => {
-    console.log("Received array in distributeState:", arr);
     setItems(arr);
     setCount(arr.length);
-    console.log("arr length", arr.length);
     setPositionArray([...Array(arr.length).keys(), ...Array(arr.length).keys()]);
   };
 
   //When we get our items we use the amount and we can set the scroll position
   useEffect(() => {
-    console.log(items); // Log the updated state
+    // Log the updated state
     if (scrollbarRef.current) {
       if (!items) return;
       scrollbarRef.current.classList.remove("car-smooth");
@@ -202,7 +199,7 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
   };
 
   return (
-    <div className="h-[600px] select-none w-full overflow-hidden" style={{ height }}>
+    <div className="h-[600px] select-none w-full overflow-hidden" style={{ height, margin }}>
       <div className="relative w-full h-full">
         <div className="carousel-btns absolute h-full w-full flex items-center justify-between">
           <div className={"h-full flex items-center w-fit z-[1] car-arrow-contx"}>
@@ -219,14 +216,13 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
         <div ref={scrollbarRef} className="grid grid-rows-1 overflow-hidden h-[600px] " style={{ height }}>
           {positionArray.map((position, i) => {
             const colorPos = i % 11;
-            // console.log(position);
             if (!items) return;
             return (
               // This is the inner part of the carousel
               <div
                 key={i}
                 style={{ width: `${window.innerWidth}px` }}
-                className={`relative row-start-1 w-full h-full snap-center flex items-center justify-center ${colors[colorPos]} ${bgColor}z ${className} text-white`}
+                className={`relative row-start-1 w-full h-full snap-center flex items-center justify-center ${colors[colorPos]}s ${bgColor} ${className} text-white`}
               >
                 {/* {position} */}
                 <div ref={containerRef} className="car-container gap-4 px-10 sm:px-16 lg:px-40)" style={{ gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))` }}>
@@ -248,7 +244,7 @@ const Carousel: React.FC<CarouselProps> = ({ className, height = "400px", bgColo
                     return (
                       // <div key={i} className="bg-white w-full flex items-center justify-center text-black text-center pt-8 border">
                       // </div>
-                      <Componet {...props} />
+                      <Componet key={i} {...props} />
                     );
                   })}
                 </div>

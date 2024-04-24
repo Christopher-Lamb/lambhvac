@@ -1,0 +1,31 @@
+.link-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-bottom: 4px;
+  /* height: 15rem; */
+}
+
+.link-box:hover {
+  margin-bottom: 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom: 4px solid var(--lambblue);
+  transform: scale(1.05);
+}
+
+.link-box span {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .link-box {
+    margin-bottom: 7px;
+  }
+
+  .link-box:hover {
+    border-bottom: 7px solid var(--lambblue);
+  }
+}

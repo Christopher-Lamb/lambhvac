@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+
+:root {
+  --text-xs-fs: 0.75rem; /* 12px */
+  --text-xs-lh: 1rem;
+
+  --text-sm-fs: 0.875rem; /* 14px */
+  --text-sm-lh: 1.25rem;
+
+  --text-base-fs: 1rem; /* 16px */
+  --text-base-lh: 1.5rem;
+
+  --text-lg-fs: 1.125rem; /* 18px */
+  --text-lg-lh: 1.75rem;
+
+  --text-xl-fs: 1.25rem; /* 20px */
+  --text-xl-lh: 1.75rem;
+
+  --text-2xl-fs: 1.5rem; /* 24px */
+  --text-2xl-lh: 2rem;
+
+  --text-3xl-fs: 1.875rem; /* 30px */
+  --text-3xl-lh: 2.25rem;
+
+  --text-4xl-fs: 2.25rem; /* 36px */
+  --text-4xl-lh: 2.5rem;
+
+  --text-5xl-fs: 3rem; /* 48px */
+  --text-5xl-lh: 1;
+  --text-6xl-fs: 3.75rem; /* 60px */
+  --text-7xl-fs: 4.5rem; /* 72px */
+}
+
+.kanit {
+  font-family: "Kanit", sans-serif;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.lamb-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: var(--lambblue);
+  box-shadow: 3px 3px 1px #ffc594;
+}
+
+p.text,
+span.text,
+li.text {
+  font-size: var(--text-base-fs);
+  line-height: var(--text-base-ls);
+}
+
+h3.text {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.875rem;
+  line-height: 2.25rem; /* 36px */
+}
+h4.text {
+  font-size: var(--text-lg-fs);
+  line-height: var(--text-lg-fs);
+}
+
+.cont {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* SM */
+@media (min-width: 640px) {
+  .cont {
+    max-width: 40rem;
+    padding: 0 1rem;
+  }
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .cont {
+    max-width: 48rem;
+  }
+  h3.text {
+    font-size: var(--text-4xl-fs);
+    line-height: var(--text-4xl-fs);
+  }
+  h4.text {
+    font-size: var(--text-xl-fs);
+    line-height: var(--text-xl-fs);
+  }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .cont {
+    max-width: 64rem;
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .cont {
+    max-width: 72rem;
+  }
+  p.text,
+  span.text,
+  li.text {
+    font-size: var(--text-lg-fs);
+    line-height: var(--text-lg-lh);
+  }
+}
+/* 2XL */
+@media (min-width: 1536px) {
+  .cont {
+    max-width: 80rem;
+  }
+}

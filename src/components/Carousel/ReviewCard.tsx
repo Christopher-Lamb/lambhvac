@@ -17,8 +17,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, text, stars }) => {
         <p className="ml-2">{text}</p>
         <span className="font-semibolsd kanit block ml-2">- {name}</span>
         <span className="flex justify-end">
-          {[...Array(stars).keys()].map(() => (
-            <GiRoundStar color="#faa502" />
+          {[...Array(stars).keys()].map((i) => (
+            <GiRoundStar key={i} color="#faa502" />
           ))}
         </span>
       </div>

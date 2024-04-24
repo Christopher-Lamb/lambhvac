@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     <>
       <div className="">
         <div className="absolute">
-          <div className="w-full overflow-hidden">{dynamicElement}</div>
+          <div className="w-full select-none overflow-hidden">{dynamicElement}</div>
         </div>
         <div className="relative z-[1] min-h-[328px] lg:min-h-[325px] text-white flex flex-col h-full justify-center px-8 lg:p-0 container xl:max-w-7xl mx-auto ">
           <ul className="flex relative z-[2] gap-2" aria-label="Breadcrumb">
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
               );
             })}
           </ul>
-          <h1 className="relative text-7xl kanit weight-500">{title}</h1>
+          <h1 className="relative text-5xl kanit weight-500 mt-2">{title}</h1>
         </div>
       </div>
     </>

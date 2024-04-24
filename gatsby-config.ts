@@ -17,13 +17,28 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    `gatsby-plugin-react-helmet`,
+
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "images",
+    //     path: "./src/images/",
+    //   },
+    //   __key: "images",
+    // },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: `data`,
+        path: `../../GitHub/markdown-maker/markdown-server/json/lambhvac_com-lvcdlfkx-e8nebv.json`, // Adjust the path to where your markdown files are located
       },
-      __key: "images",
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `Json`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,

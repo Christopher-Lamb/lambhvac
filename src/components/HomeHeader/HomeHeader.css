@@ -1,0 +1,29 @@
+.homeheader-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.534);
+  z-index: 2; /* Ensure it's above the image but below everything else if needed */
+}
+
+/* .homeheader-img {
+  background-color: black;
+} */
+
+.homeheader-animation {
+  animation: slideInFromBottom 1s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

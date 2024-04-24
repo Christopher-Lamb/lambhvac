@@ -14,8 +14,12 @@ function toKebabCase(input: string): string {
 const inputStyle = "p-2 text-black";
 const labelStyle = "kanit text-lg";
 
-const Form: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => {
-  return <form className={className}>{children}</form>;
+const Form: React.FC<{ children: React.ReactNode; className?: string; id?: string }> = ({ children, className, id }) => {
+  return (
+    <form id={id} className={className}>
+      {children}
+    </form>
+  );
 };
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {

@@ -18,6 +18,7 @@ const navLinks: NavLinkProps[] = [
     path: "/air-conditioning",
     sublinks: [
       { title: "Installs", path: "/air-conditioning/installs" },
+      { title: "Service Calls", path: "/service-calls" },
       { title: "Repairs", path: "/air-conditioning/repairs" },
       { title: "Maintenance", path: "/air-conditioning/maintenance" },
       { title: "Ductless Mini Splits", path: "/air-conditioning/ductless-mini-splits" },
@@ -30,6 +31,7 @@ const navLinks: NavLinkProps[] = [
     path: "/heating",
     sublinks: [
       { title: "Boilers", path: "/heating/boilers" },
+      { title: "Service Calls", path: "/service-calls" },
       { title: "Ductless Mini Splits", path: "/heating/ductless-mini-splits" },
       { title: "Furnaces", path: "/heating/furnaces" },
       { title: "Heat Pumps", path: "/heating/heat-pumps" },
@@ -88,7 +90,8 @@ const MobileNavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
   const subLinksRef = useRef<HTMLUListElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const subLinkToggle = () => {
-    if (subLinksRef.current) subLinksRef.current.classList.toggle("nav-not-active");
+    subLinksRef.current?.classList.toggle("nav-not-active");
+    subLinksRef.current?.classList.toggle("nav-active");
     setIsOpen((prev) => !prev);
   };
 
@@ -104,7 +107,7 @@ const MobileNavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {
           </button>
         )}
       </li>
-      <ul ref={subLinksRef} className="nav-not-active relative grid z-[999] bg-blue-100">
+      <ul ref={subLinksRef} className="nav-not-active grid z-[999] bg-blue-100">
         {sublinks?.map(({ title, path }) => (
           <Link to={path} key={path}>
             <li className="px-8 py-1 text-xl border-b-[1px] border-blue-200">{title}</li>

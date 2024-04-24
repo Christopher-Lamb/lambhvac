@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import type { HeadFC, PageProps } from "gatsby";
+import { Link, type HeadFC, type PageProps } from "gatsby";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import TextBlock from "../../components/TextBlock";
@@ -13,7 +13,6 @@ const ServiceContractsPage: React.FC<PageProps> = () => {
     // Assert event type if needed
     const target = event.target as Element;
     let scrollTop = target.children[0].scrollTop;
-    console.log(scrollTop);
 
     if (scrollTop < 1550 && scrollTop > 200) {
       // console.log("scroll", scrollTop);
@@ -33,7 +32,7 @@ const ServiceContractsPage: React.FC<PageProps> = () => {
     <>
       <Navbar />
       <Header title="Service Contracts" />
-      <section className="cont mx-auto flex">
+      <section className="cont mx-auto flex gap-4">
         <div className="w-8/12">
           <TextBlock heading="What is a Service Contract?" className="kanit">
             Laboris sint tempor Lorem in ullamco anim exercitation sunt id nulla velit. Ex reprehenderit amet nulla Lorem. Nisi nostrud consectetur sunt magna reprehenderit exercitation minim sit sunt
@@ -111,7 +110,9 @@ const ServiceContractsPage: React.FC<PageProps> = () => {
             ]}
           />
         </div>
-        <div style={{ top: `${height}px` }} className="relative ease-in-out duration-500 w-4/12 bg-violet-900 h-96"></div>
+        <div style={{ top: `${height}px` }} className="relative ease-in-out duration-500 w-4/12 max-w-[18.75rem]">
+          <PriceDiv />
+        </div>
       </section>
       <section className="cont mx-auto mt-16">
         <h3 className="text mb-1">Also Included</h3>
@@ -126,6 +127,74 @@ const ServiceContractsPage: React.FC<PageProps> = () => {
       </section>
       <Footer />
     </>
+  );
+};
+
+const inactiveBtnStyle = {
+  background: "#D3D3D3",
+  color: "#727272",
+};
+const activeBtnStyle = {
+  background: "rgb(50, 179, 93)",
+  color: "#fff",
+};
+
+const PriceDiv: React.FC = () => {
+  const [subscriptionType, setSubscriptionType] = useState("monthly");
+  // Define a type for the subscription options
+  type SubscriptionOption = "monthly" | "yearly";
+
+  // State to track the selected option
+  const [selectedOption, setSelectedOption] = useState<SubscriptionOption>("monthly");
+
+  // Event handlers for button clicks
+  const handleMonthlyClick = () => {
+    setSelectedOption("monthly");
+    setSession("monthly");
+  };
+  const handleYearlyClick = () => {
+    setSelectedOption("yearly");
+    setSession("yearly");
+  };
+
+  const setSession = (type: string): void => {
+    sessionStorage.setItem("subscription-type", type);
+  };
+  const getSession = (): SubscriptionOption => {
+    const savedType = sessionStorage.getItem("subscription-type");
+
+    if (savedType === "monthly" || savedType === "yearly") {
+      return savedType;
+    } else {
+      sessionStorage.setItem("subscription-type", "monthly");
+      return "monthly";
+    }
+  };
+
+  useEffect(() => {
+    const type = getSession();
+    setSelectedOption(type);
+  }, []);
+
+  return (
+    <div className="shadow-md border">
+      <div className="bg-[var(--lambblue)] text-white text-center min-h-[8.25rem] flex justify-center flex-col">
+        <span className="block shrink-0 text-4xl kanit weight-500">{selectedOption === "yearly" ? "$313.15" : "$29.95"}</span>
+        <span className="block shrink-0 text-xl">{selectedOption === "yearly" ? "for 12 months" : "a month"}</span>
+      </div>
+      <div className="flex">
+        <button className="bg-gray-100 w-full flex justify-center py-4" onClick={handleMonthlyClick} style={selectedOption === "monthly" ? activeBtnStyle : inactiveBtnStyle}>
+          Monthly
+        </button>
+        <button className="bg-gray-100 w-full flex justify-center py-4" onClick={handleYearlyClick} style={selectedOption === "yearly" ? activeBtnStyle : inactiveBtnStyle}>
+          One Year
+        </button>
+      </div>
+      <div className="mt-10" aria-hidden />
+      <Link to="/service-contracts/location-check/">
+        <div className="flex justify-center py-4 text-xl bg-[#337ab7] text-white font-bold">Click here to Sign Up</div>
+      </Link>
+    </div>
   );
 };
 
