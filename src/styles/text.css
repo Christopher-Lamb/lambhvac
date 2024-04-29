@@ -43,7 +43,7 @@
   width: 15px;
   height: 15px;
   background-color: var(--lambblue);
-  box-shadow: 3px 3px 1px #ffc594;
+  box-shadow: 3px 3px 1px #fff, 3px 3px 1px #000;
 }
 
 p.text,

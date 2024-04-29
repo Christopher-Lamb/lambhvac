@@ -5,7 +5,7 @@ type arrayOfStringPairs = [string, string];
 
 interface BulletsProps {
   array: string[] | arrayOfStringPairs[];
-  variant?: "square" | "round" | "circle" | "snowflake" | "fire";
+  variant?: "square" | "round" | "circle" | "snowflake" | "fire" | "check";
   layout?: "grid" | "none";
   margin?: string | number;
   className?: string;
@@ -18,6 +18,18 @@ function parseToInt(input: string | number): number {
   } else {
     return 0;
   }
+}
+
+function determineHVACMode(): string {
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth(); // getMonth returns a zero-based index (0 = January, 11 = December)
+
+  // Check if it's May to September (4 to 8 in zero-based index)
+  if (currentMonth >= 4 && currentMonth <= 8) {
+    return "air-conditioning";
+  }
+  // Otherwise, it's October to April
+  return "heating";
 }
 
 const Bullets: React.FC<BulletsProps> = ({ array, margin, variant = "square", layout = "none", className }) => {
@@ -37,6 +49,9 @@ const Bullets: React.FC<BulletsProps> = ({ array, margin, variant = "square", la
       break;
     case "fire":
       bulletClass += "bullet-fire";
+      break;
+    case "check":
+      bulletClass += "bullet-green-check";
       break;
     default:
       break;

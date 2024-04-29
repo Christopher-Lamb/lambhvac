@@ -15,18 +15,17 @@ const config: GatsbyConfig = {
     // "gatsby-plugin-google-gtag",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
+    
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images/`,
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     `gatsby-plugin-react-helmet`,
-
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "images",
-    //     path: "./src/images/",
-    //   },
-    //   __key: "images",
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

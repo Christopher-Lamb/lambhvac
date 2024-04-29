@@ -12,13 +12,12 @@ interface NavLinkProps {
 }
 
 const navLinks: NavLinkProps[] = [
-  { title: "Test", path: "/test/" },
   {
     title: "Air Conditioning",
     path: "/air-conditioning",
     sublinks: [
       { title: "Installs", path: "/air-conditioning/installs" },
-      { title: "Service Calls", path: "/service-calls" },
+      { title: "Service Calls", path: "/air-conditioning/service-calls" },
       { title: "Repairs", path: "/air-conditioning/repairs" },
       { title: "Maintenance", path: "/air-conditioning/maintenance" },
       { title: "Ductless Mini Splits", path: "/air-conditioning/ductless-mini-splits" },
@@ -31,7 +30,7 @@ const navLinks: NavLinkProps[] = [
     path: "/heating",
     sublinks: [
       { title: "Boilers", path: "/heating/boilers" },
-      { title: "Service Calls", path: "/service-calls" },
+      { title: "Service Calls", path: "/heating/service-calls" },
       { title: "Ductless Mini Splits", path: "/heating/ductless-mini-splits" },
       { title: "Furnaces", path: "/heating/furnaces" },
       { title: "Heat Pumps", path: "/heating/heat-pumps" },
@@ -39,10 +38,10 @@ const navLinks: NavLinkProps[] = [
       { title: "Tips", path: "/heating/tips" },
     ],
   },
-  {
-    title: "Financing",
-    path: "/financing",
-  },
+  // {
+  //   title: "Financing",
+  //   path: "/financing",
+  // },
   {
     title: "Service Contracts",
     path: "/service-contracts",
@@ -54,7 +53,10 @@ const navLinks: NavLinkProps[] = [
   {
     title: "Contact",
     path: "/contact",
-    sublinks: [{ title: "Request Service", path: "/contact/request-service" }],
+    sublinks: [
+      { title: "Request Service", path: "/contact/request-service" },
+      { title: "Request Estimate", path: "/contact/request-estimate" },
+    ],
   },
 ];
 const NavLink: React.FC<NavLinkProps> = ({ title, path, sublinks }) => {

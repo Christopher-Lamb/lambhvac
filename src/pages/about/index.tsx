@@ -2,49 +2,77 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
-import PictureText from "../../components/PictureText";
-import TextBlock from "../../components/TextBlock";
+import { PictureText, ContentSection, CallToAction } from "../../components/ComponentsTest/";
+import { Footer } from "../../components";
+import Image from "../../components/Image";
+import { Form, Input, TextArea, FieldSet, Select } from "../../components/Form";
 
 const ContactPage: React.FC<PageProps> = () => {
   return (
     <>
       <Navbar />
       <Header title="About us" />
-      <div className="container xl:max-w-7xl mx-auto">
+      <div className="container mt-small xl:max-w-five mx-auto">
         <PictureText
-          variant="50-50"
-          imgVariant="rounded"
-          heading="About"
-          fileName=""
-          alt=""
-          body="Velit consequat ipsum cillum irure sint dolore veniam reprehenderit eu laborum labore sit irure. Quis id duis consectetur sunt velit nisi ullamco culpa. Non incididunt consectetur sint esse cupidatat fugiat Lorem nostrud adipisicing pariatur occaecat reprehenderit do dolor. Aliquip Lorem minim fugiat est nostrud. Ea minim est ullamco voluptate consequat elit quis id Lorem aliquip ullamco elit. Sunt voluptate ipsum fugiat ipsum."
+          fileName="suburban.jpeg"
+          alt="Suburban Image"
+          className="content-class"
+          content="<h3>Commitment to Excellence</h3><p>Since our inception in 2011, Lamb Heating & Air Conditioning has been committed to providing superior HVAC services across South Jersey. As a family-owned and operated business, we bring a personal touch to every project, ensuring that each client receives the highest level of professionalism, courtesy, and honesty.</p>
+          <br/><p>If you have issues with your HVAC system, call us immediately. Count on us to help! <strong>Contact us today for all your HVAC needs:</strong> <a href='tel:+18562174920'>(856)-217-4920</a>.</p>"
         />
-        <p>
-          Eiusmod elit enim nostrud consectetur Lorem ex in laboris. Occaecat id velit occaecat in sit magna nostrud. Ad nisi labore nulla aliquip culpa sit velit incididunt Lorem dolore qui ullamco
-          dolore. Fugiat do non fugiat fugiat ullamco laboris laboris dolor adipisicing incididunt.Incididunt pariatur veniam nisi culpa id incididunt sit duis ad fugiat ad eiusmod exercitation
-          veniam. Quis enim proident deserunt cupidatat. Fugiat magna et fugiat ut dolore est enim sit laboris magna ex. Aliquip ullamco commodo velit sit voluptate tempor sunt fugiat sint consectetur
-          voluptate proident. Nulla ea cupidatat ad elit magna sint nostrud veniam ullamco mollit aliquip mollit. Incididunt qui deserunt elit ut excepteur fugiat excepteur nulla cillum excepteur.
-          Reprehenderit anim nostrud ad deserunt magna mollit eu exercitation tempor tempor elit aliqua.
-        </p>
+        <div className="max-w-five mx-auto">
+          <ContentSection
+            className="content-class max-w-five mt-small"
+            content=" <h2>Our Expertise</h2>
+<p>
+  With over a decade of experience, our team has successfully installed and maintained hundreds of HVAC systems. Our deep
+  understanding of HVAC technology allows us to work efficiently with all makes and models. Whether you need a system upgrade or a brand-new installation, we are equipped to handle your requirements
+  without disruption.
+</p>
+<br/>
+<h2>Quality Workmanship and Customer Service</h2>
+<p>
+  We take pride in our craftsmanship and the quality of our service. Our technicians are highly skilled in every aspect of HVAC installation, including precision ductwork designed to optimize airflow
+  and system efficiency. By installing modern, high-quality ducts, we ensure that your new system delivers optimal performance and energy efficiency.
+</p>
+<br/>
+<h2>Choose Lamb Heating & Air Conditioning</h2>
+<p>
+  Trust us to keep your spaces comfortable and efficient, regardless of the season. Contact Lamb Heating & Air Conditioning today to discuss how we can help you with your HVAC needs and ensure your
+  system performs at its best.
+</p>
+"
+          />
+        </div>
       </div>
-      <PictureText
-        variant="50-50"
-        heading="About"
-        background="var(--lambblue)"
-        fileName=""
-        alt=""
-        color="white"
-        reverse
-        body="Velit consequat ipsum cillum irure sint dolore veniam reprehenderit eu laborum labore sit irure. Quis id duis consectetur sunt velit nisi ullamco culpa. Non incididunt consectetur sint esse cupidatat fugiat Lorem nostrud adipisicing pariatur occaecat reprehenderit do dolor. Aliquip Lorem minim fugiat est nostrud. Ea minim est ullamco voluptate consequat elit quis id Lorem aliquip ullamco elit. Sunt voluptate ipsum fugiat ipsum."
-      />
-      <section>
-        <h1>Something with information thats bullets our values</h1>
-        <p>Bulleted Info</p>
-      </section>
+      <div className="bg-[#f7f7f7] my-small overflow-hidden mt-large">
+        <div className="relative w-full hidden md:block">
+          <div className="absolute left-0 h-[915px] top-0 w-full blur-sm">
+            <Image fileName="suburbanWideshot.jpg" alt="string" className="w-full h-[915px] blur-s" />
+          </div>
+        </div>
+        <Form id="form" className="container border border-2 md:shadow-lg relative lg:max-w-4xl mx-auto px-10 py-12 bg-gray-100 border border-gray-300 rounded-lg shadows form-shadow my-16">
+          <h1 className="kanit weight-500 text-5xl">Contact Us</h1>
+          <p className="mb-4">
+            Please fill out the form below, and a team member will contact you within 24 hours or the next business day to answer any questions you have. For emergencies and immediate assistance,
+            please call <a href="tel:+18562174920">(856)-217-4920</a>
+          </p>
 
-      <section className="cont mx-auto text-center">
-        <TextBlock heading="Why choose us?" className="kanit">HelEt ullamco occaecat consequat non do ullamco minim ex cupidatat ipsum. Nisi consectetur ea laboris ea ea voluptate minim in irure. Tempor reprehenderit dolore nostrud nostrud. Nostrud in veniam dolore sunt aute ut ipsum exercitation pariatur aliqua sit.Occaecat incididunt deserunt incididunt ad consectetur ea sit labore ullamco sit nisi officia proident. Veniam ipsum veniam veniam magna ullamco laborum laborum aliquip est officia. Deserunt magna amet tempor ad cillum sit tempor commodo nulla nostrud sit tempor ut aliquip. Laborum et excepteur deserunt laboris magna commodo aliqua minim eu esse Lorem.lo</TextBlock>
-      </section>
+          <FieldSet className="grid md:grid-cols-2 gap-x-4 gap-3">
+            <Input label="Name" required />
+            <Input label="Email" required />
+            <Input label="Phone" required />
+            <Select label="Services" options={["Choose One", "Air Conditioning", "Heating"]} />
+          </FieldSet>
+          <FieldSet>
+            <TextArea label="Message" required className="h-32 mt-3" />
+          </FieldSet>
+          <button type="submit" className="py-2xsmall mt-2xsmall px-small rounded bg-lambblue text-small18 text-white font-semibold mr-3xsmall sm:mr-xsmall hover:brightness-110 shadow-md">
+            Send
+          </button>
+        </Form>
+      </div>
+      <Footer className="mt-large" />
     </>
   );
 };

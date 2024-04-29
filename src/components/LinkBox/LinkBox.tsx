@@ -3,8 +3,6 @@ import React from "react";
 import "./LinkBox.css";
 import { Flame, House, Phone, SnowFlake, HeatingTips, ACTips, Thermometer, Finance } from "../../assets";
 
-type SVGComponent = React.ElementType;
-
 // Type the svgMap
 type LinkObj = {
   svg: string;
@@ -37,7 +35,7 @@ const LinkBox: React.FC<LinkBoxProps> = ({ variant = "about", size = "large" }) 
     const { svg, path, alt, text } = svgMap[variant];
     return (
       <Link to={path}>
-        <div className="link-box bg-gradient-to-t from-gray-50 to-white" >
+        <div className="link-box bg-gradient-to-t from-gray-50 to-white">
           <img src={svg} alt={alt} className={`w-full px-8 ${sizeClass}`} />
           <span className="kanit my-2 text-xl">{text}</span>
         </div>
@@ -55,8 +53,8 @@ const LinkBox: React.FC<LinkBoxProps> = ({ variant = "about", size = "large" }) 
 const LinkBoxContainer: React.FC<{ variantArr: Variant[]; size?: "small" | "large" }> = ({ variantArr = ["cooling"], size }) => {
   return (
     <>
-      {variantArr.map((variant) => (
-        <LinkBox variant={variant} size={size} />
+      {variantArr.map((variant, i) => (
+        <LinkBox key={i} variant={variant} size={size} />
       ))}
     </>
   );

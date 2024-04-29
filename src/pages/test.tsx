@@ -5,6 +5,7 @@ import PictureText from "../components/PictureText";
 import Bullets from "../components/Bullets/Bullets";
 import { GiPhone } from "react-icons/gi";
 import Button from "../components/Button";
+import Image from "../components/Image";
 
 const ContactPage: React.FC<PageProps> = () => {
   return (
@@ -12,7 +13,7 @@ const ContactPage: React.FC<PageProps> = () => {
       <Header title="Test" />
       <div className="mb-16" />
       <div className="mx-auto flex items-center justify-center max-w-7xl">
-        <Button varient="secondary-rounded">Test Btn</Button>
+        <Image alt="something" fileName="House.jpg"/>
       </div>
     </>
   );

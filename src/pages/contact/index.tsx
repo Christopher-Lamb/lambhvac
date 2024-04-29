@@ -40,24 +40,24 @@ const ContactPage: React.FC<PageProps> = () => {
         <section className="flex flex-col-reverse xl:flex-row items-center max-w-screen-2xl mx-auto">
           {/* Form */}
           <div ref={formRef} className="">
-            <Form className="px-10 pl-16 py-12 max-w-8xl bg-[#E5E5E5]">
+            <Form className="px-10 pl-16 py-12 max-w-8xl bg-[#f7f7f7]">
               <h1 className="kanit weight-500 text-5xl">Contact Us</h1>
               <p className="mb-4">
                 Please fill out the form below, and a team member will contact you within 24 hours or the next business day to answer any questions you have. For emergencies and immediate assistance,
                 please call (856)-217-4920
               </p>
               <FieldSet className="grid md:grid-cols-2 gap-x-4 gap-3">
-                <Input label="Name" />
-                <Input label="Email" />
-                <Input label="Phone" />
+                <Input label="Name" required />
+                <Input label="Email" required />
+                <Input label="Phone" required />
                 <Select label="Services" options={["Choose One", "Air Conditioning", "Heating"]} />
               </FieldSet>
               <FieldSet>
-                <TextArea label="Message" className="h-32 mt-3" />
+                <TextArea label="Message" required className="h-32 mt-3" />
               </FieldSet>
-              <Button type="submit" className="text-xl mt-3 px-12">
+              <button type="submit" className="py-2xsmall mt-2xsmall px-small rounded bg-lambblue text-small18 text-white font-semibold mr-3xsmall sm:mr-xsmall hover:brightness-110 shadow-md">
                 Send
-              </Button>
+              </button>
             </Form>
           </div>
           <div className="relative hidden xl:block" aria-hidden="true">
@@ -81,50 +81,19 @@ const ContactPage: React.FC<PageProps> = () => {
 
           <img src={FlAMEANDSNOW} alt="Flame and Snowflake Icon" className="hidsden md:blsock" />
         </section>
-        {/* <iframe
-        width="600"
-        height="450"
-        style={{ border: 0 }}
-        className="w-full"
-        loading="lazy"
-        allowFullScreen
-        referrerPolicy="origin"
-        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB0bJo1hiqqXkcyQAzPrKPGvypdOD0MYZA
-        &q=847MonmouthSt.`}
-      ></iframe> */}
-        <div className="bg-green-600 h-[450px] flex items-center justify-center">
-          <h1 className="text-7xl text-white">Map</h1>
-          <div className="absolute left-[0px] bg-blue-500 w-32 h-32">
-            <div className="bg-white absolute w-5 h-5 top-[20px] left-[32px]" />
-            <div className="bg-black absolute w-3 h-3 top-[25px] left-[36px]" />
-            <div className="bg-white absolute w-5 h-5 top-[20px] left-[73px]" />
-            <div className="bg-black absolute w-3 h-3 top-[25px] left-[76px]" />
-            <div className="bg-white absolute w-24 h-5 top-[90px] left-[16px]" />
-            <div className="bg-white absolute w-5 h-5 top-[70px] left-[16px]" />
-            <div className="bg-white absolute w-5 h-5 top-[70px] left-[92px]" />
-          </div>
-          <div className="absolute left-[128px] bg-red-600 w-32 h-32">
-            <div className="bg-white absolute w-5 h-5 top-[20px] left-[32px]" />
-            <div className="bg-black absolute w-3 h-3 top-[25px] left-[36px]" />
-            <div className="bg-white absolute w-5 h-5 top-[20px] left-[73px]" />
-            <div className="bg-black absolute w-3 h-3 top-[25px] left-[76px]" />
-            <div className="bg-white absolute w-24 h-5 top-[90px] left-[16px]" />
-            <div className="bg-white absolute w-5 h-5 top-[70px] left-[16px]" />
-            <div className="bg-white absolute w-5 h-5 top-[70px] left-[92px]" />
-          </div>
-          <div className="absolute left-[256px] bg-violet-600 w-32 h-32">
-            <div className="bg-white absolute w-5 h-5 top-[20px] left-[32px]" />
-            <div className="bg-black absolute w-3 h-3 top-[25px] left-[36px]" />
-            <div className="bg-white absolute w-5 h-5 top-[20px] left-[73px]" />
-            <div className="bg-black absolute w-3 h-3 top-[25px] left-[76px]" />
-            <div className="bg-white absolute w-24 h-5 top-[90px] left-[16px]" />
-            <div className="bg-white absolute w-5 h-5 top-[70px] left-[16px]" />
-            <div className="bg-white absolute w-5 h-5 top-[70px] left-[92px]" />
-          </div>
-        </div>
+        <iframe
+          height="450"
+          style={{ border: 0 }}
+          className="w-full"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="origin"
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB0bJo1hiqqXkcyQAzPrKPGvypdOD0MYZA
+    &q=1010 Rose Ave. Unit D Runnemede, NJ 08078`}
+        ></iframe>
         <Carousel height="400px" variant="reviews" interval={false} />
       </div>
-      <Footer className="mt-16" />;
+      <Footer className="mt-16" />
     </>
   );
 };

@@ -1,7 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
+    options: {
+      safelist: [/md:/, /lg:/, /bg-/, ""], // Add specific classes or patterns
+    },
+  },
   content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, "./src/templates/**/*.{js,jsx,ts,tsx}", `./src/components/**/*.{js,jsx,ts,tsx,module.css}`],
+  // purge: {
+  //   content: ['./src/**/*.{js,jsx,ts,tsx,html,css}'],
+  //   options: {
+  //     safelist: [/^md:/, /^xl:/], // Add patterns or specific classes you expect to be dynamic
+  //   },
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         lightgray: "#f9fafb",

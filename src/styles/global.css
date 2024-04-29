@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  box-sizing: border-box;
+}
+
 :root {
   --lambblue: #2458a6;
   --lambbluedarker: #1a4381;

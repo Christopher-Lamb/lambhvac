@@ -16,7 +16,12 @@ const labelStyle = "kanit text-lg";
 
 const Form: React.FC<{ children: React.ReactNode; className?: string; id?: string }> = ({ children, className, id }) => {
   return (
+    //action={"https://krispywebsites.com/form"} method="post"
     <form id={id} className={className}>
+      <input type="hidden" name="recipient" value="christopher.j.lamb13@gmail.com" />
+      {/* <input type="hidden" name="recipient" value="blamb@lambhvac.com" /> */}
+      <input type="hidden" name="page" defaultValue={"Page"} />
+      {/* <input type="hidden" name="redirect_url" value={window.location.href} /> */}
       {children}
     </form>
   );
@@ -32,9 +37,9 @@ const Input: React.FC<InputProps> = ({ label, ...other }) => {
   return (
     <div className={"w-full " + className}>
       <label htmlFor={name} className={labelStyle}>
-        {label}
+        {label} {inputProps.required && <span className="text-red-600">*</span>}
       </label>
-      <input id={name} name={name} className={"w-full " + inputStyle} {...other} />
+      <input id={name} name={name} className={"w-full shadow " + inputStyle} {...inputProps} />
     </div>
   );
 };
@@ -51,9 +56,10 @@ const TextArea: React.FC<TextAreaProps> = ({ label, ...other }) => {
       {label && (
         <label htmlFor={name} className={labelStyle}>
           {label}
+          {textAreaProps.required && <span className="text-red-600"> *</span>}
         </label>
       )}
-      <textarea id={name} name={name} {...other} className={"w-full min-h-[8rem] " + inputStyle} />
+      <textarea id={name} name={name} {...textAreaProps} className={"w-full shadow min-h-[8rem] " + inputStyle} />
     </div>
   );
 };
@@ -70,15 +76,19 @@ const Select: React.FC<SelectProps> = ({ label, options, selected }) => {
       <label htmlFor={name} className={labelStyle}>
         {label}
       </label>
-      <select id={name} name={name} className={"w-full " + inputStyle}>
-        {options.map((value) => {
+      <select id={name} name={name} className={"w-full shadow " + inputStyle}>
+        {options.map((value, i) => {
           if (value === selected)
             return (
-              <option value={toKebabCase(value)} selected>
+              <option key={i} value={toKebabCase(value)} selected>
                 {value}
               </option>
             );
-          return <option value={toKebabCase(value)}>{value}</option>;
+          return (
+            <option key={i} value={toKebabCase(value)}>
+              {value}
+            </option>
+          );
         })}
       </select>
     </div>

@@ -8,17 +8,36 @@
   font-size: var(--text-base-fs);
   line-height: var(--text-base-ls);
 }
+.content-class li {
+  list-style-image: url("../images/lamb_bullet.jpg");
+}
 
-.content-class h3 {
+.content-class ul {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.content-class h2 {
   color: #004a80;
   font-family: "Segoe UI", sans-serif;
   font-size: 1.875rem;
+  margin-bottom: 0.5rem;
   line-height: 2.25rem; /* 36px */
 }
-.content-class h4 {
+.content-class a {
+  color: #004a80;
+  text-decoration: underline;
+}
+
+.content-class a:hover {
+  color: #1284d5;
+}
+
+.content-class h3 {
   color: #004a80;
   font-size: var(--text-lg-fs);
   line-height: var(--text-lg-fs);
+  margin-bottom: 0.25rem;
 }
 
 .cont {
@@ -39,11 +58,11 @@
   .cont {
     max-width: 48rem;
   }
-  .content-class h3 {
+  .content-class h2 {
     font-size: var(--text-4xl-fs);
     line-height: var(--text-4xl-fs);
   }
-  .content-class h4 {
+  .content-class h3 {
     font-size: var(--text-xl-fs);
     line-height: var(--text-xl-fs);
   }

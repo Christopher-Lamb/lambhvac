@@ -1,0 +1,4 @@
+.cta-gradient {
+  background: rgb(26, 67, 129);
+  background: linear-gradient(122deg, rgba(26, 67, 129, 1) 0%, rgba(36, 88, 166, 1) 50%, rgba(71, 130, 217, 1) 75%, rgba(71, 130, 217, 1) 100%);
+}

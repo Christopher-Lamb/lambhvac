@@ -1,0 +1,25 @@
+.something {
+  font-size: 50px;
+  line-height: 1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.somethingWrapper {
+  color: #1f1f1f;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  height: 10.6875rem;
+}
+
+.sjgasWrapper {
+  margin: 67.7696px auto 0 auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sjgas {
+  width: 100%;
+  max-width: 400px;
+}

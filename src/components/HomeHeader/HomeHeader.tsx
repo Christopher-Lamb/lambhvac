@@ -4,6 +4,8 @@ import Button from "../Button";
 // import HomeImg from "../../images/House.jpg";
 import HomeImgBig from "../../images/houseBigger.jpg";
 import AnimatedComponent from "../AnimatedComponent/AnimatedComponent";
+import { StaticImage } from "gatsby-plugin-image";
+import Image from "../Image";
 import "./HomeHeader.css";
 
 const HomeHeader: React.FC = () => {
@@ -17,9 +19,11 @@ const HomeHeader: React.FC = () => {
   });
 
   return (
-    <div className="relative bg-blue-400s min-h-[630px] lg:h-[700px] w-full overflow-hidden">
+    <div className="relative  min-h-[630px] lg:h-[700px] w-full overflow-hidden">
       <div className="relative w-full h-full homeheader-img min-h-[630px] lg:h-[700px]">
-        <img src={HomeImgBig} id="layer2" alt="Home header" className="absolute object-cover w-full lg:top-[-300px] h-[630px] lg:h-[1000px]" />
+        <div id="layer2" className="absolute w-full h-full min-h-[630px] lg:h-[700px] z-[1]">
+          <Image fileName="House.jpg" alt="Home header" className="absolute object-cover w-full top-[-20px] lg:top-[-300px] h-[660px] lg:h-[1000px]" />
+        </div>
         <div className="w-full relative z-[3] min-h-[630px] lg:h-[700px] flex items-center justify-center">
           <HeaderCard />
         </div>
@@ -39,7 +43,7 @@ const HeaderCard: React.FC<{ title?: string; text?: string }> = ({ title, text }
         </p>
         <div className="flex flex-col md:flex-row items-center gap-4 justify-center mt-2xsmall">
           <a
-            href="tel:+18562174920"
+            href="/contact/"
             className="py-2xsmall px-xsmall rounded bg-lambblue text-med text-white font-semibold mr-xsmall hover:brightness-150 hover:translate-y-[-1px] shadow-md shadow-[#2458a6ad]"
           >
             Contact Us

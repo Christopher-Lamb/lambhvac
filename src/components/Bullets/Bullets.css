@@ -3,7 +3,7 @@
   width: 16px;
   height: 16px;
   background-color: var(--lambblue);
-  box-shadow: 3px 3px 1px #ffc594;
+  box-shadow: 3px 3px 1px #fff, 3px 3px 1px #000;
 }
 
 .bullet-round {
@@ -12,7 +12,7 @@
   height: 16px;
   border-radius: 15%;
   background-color: var(--lambblue);
-  box-shadow: 3px 3px 1px #ffc594;
+  box-shadow: 3px 3px 1px #fff, 3px 3px 1px #000;
 }
 
 .bullet-circle {
@@ -21,7 +21,7 @@
   height: 16px;
   border-radius: 150%;
   background-color: var(--lambblue);
-  box-shadow: 2px 2px 1px #ffc594;
+  box-shadow: 2px 2px 1px #fff, 2px 2px 1px #000;
 }
 
 .bullet-snowflake {
@@ -32,10 +32,18 @@
   background-image: url("../../images/snowflake16x16.png");
 }
 
+.bullet-green-check {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  /* border-radius: 150%; */
+  background-image: url("../../images/green_check.jpg");
+}
+
 .bullet-fire {
   flex-shrink: 0;
   width: 16px;
   height: 16px;
   /* border-radius: 150%; */
-  background-image: url("../../images/flame16x16.png");
+  background-image: url("../../images/flame.png");
 }
