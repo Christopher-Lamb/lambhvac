@@ -15,13 +15,28 @@ const inputStyle = "p-2 text-black";
 const labelStyle = "kanit text-lg";
 
 const Form: React.FC<{ children: React.ReactNode; className?: string; id?: string }> = ({ children, className, id }) => {
+  const getPageName = () => {
+    if (typeof window !== "undefined") {
+      let pathname = window.location.pathname;
+      if (pathname === "/") return "Home";
+      pathname = pathname.replaceAll("/", "");
+      pathname = pathname
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+      return pathname;
+    }
+  };
+
   return (
-    //action={"https://krispywebsites.com/form"} method="post"
-    <form id={id} className={className}>
-      <input type="hidden" name="recipient" value="christopher.j.lamb13@gmail.com" />
-      {/* <input type="hidden" name="recipient" value="blamb@lambhvac.com" /> */}
-      <input type="hidden" name="page" defaultValue={"Page"} />
-      {/* <input type="hidden" name="redirect_url" value={window.location.href} /> */}
+    <form id={id} className={className} action={"https://krispywebsites.com/form"} method="POST">
+      <input type="hidden" name="recipient" value="blamb@lambhvac.com" />
+      {typeof window !== "undefined" && (
+        <>
+          <input type="hidden" name="redirect_url" defaultValue={window.location.href} />
+          <input type="hidden" name="page" defaultValue={getPageName() + " Page"} />
+        </>
+      )}
       {children}
     </form>
   );

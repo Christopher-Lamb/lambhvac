@@ -34,7 +34,7 @@ const ServiceContractsPage: React.FC<PageProps> = () => {
       <Navbar />
       <Header title="Service Contracts" />
       <section className="cont mx-auto flex gap-xsmall mt-small">
-        <div className="w-8/12">
+        <div className="w-full lg:w-8/12">
           <ContentSection
             content="<h2>What is a Service Contract?</h2><p>During the heat of Summer or the long cold days of the winter, it is crucial that your heating and cooling systems are working properly. A heating and cooling protection plan offers protection and preventative treatments to your system to avoid any unforeseen problems.</p><br/><h2>Is my System qualified for this Protection Plan?</h2><p>This plan covers electric central air conditioner split systems that utilize R22 or R410A refrigerant and are rated five tones (60,000 BTUs) or less by the manufacturer. Air Conditioning systems that share components or controls with an oil-fired furnace are not eligible for coverage.</p>"
             className="content-class"
@@ -104,11 +104,14 @@ const ServiceContractsPage: React.FC<PageProps> = () => {
             ]}
           />
         </div>
-        <div style={{ top: `${height}px` }} className="relative ease-in-out duration-500 w-4/12 max-w-[18.75rem]">
+        <div style={{ top: `${height}px` }} className="relative h-fit ease-in-out duration-500 hidden lg:block w-4/12 max-w-[18.75rem]">
           <PriceDiv />
         </div>
       </section>
-      <section className="cont mx-auto mt-16 mb-16">
+      <div className="px-small block lg:hidden my-small">
+        <PriceDiv />
+      </div>
+      <section className="cont mx-auto mb-16">
         <ContentSection
           className="content-class"
           content="<h2>Also Included</h2><ul><li>One Springe Service</li><li>One Fall Service</li></ul><br/><h2>What does servicing a system consist of?</h2><p>It consists of one of our technicians relieving your system of any build-up that formed over the previous season. Necessary parts are cleaned, and carbon build-up is removed. This process is vital for the health and longevity of HVAC units. We pride ourselves in our preventative measures. In order to make sure your unit is running at maximum efficiency, it needs to be cleaned before each Winter and Summer. Therefore, we will send a technician to your house in Spring and Fall to ensure your system's ability to carry out its task. Maintaining your system greatly decreases the likelihood of unexpected breaks during the times of the year when there is high demand for HVAC technicians.</p>"

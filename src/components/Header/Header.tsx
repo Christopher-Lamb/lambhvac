@@ -39,25 +39,27 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     }
   };
   const handlePathname = () => {
-    let pathname = window.location.pathname;
-    const pathArr = pathname.split("/").filter(Boolean);
-    let cumulativePath = "";
-    let pathObjArr = pathArr.map((path, i) => {
-      cumulativePath += `/${path}`;
-      let active = false;
-      if (pathArr.length - 1 === i) active = true;
-      return {
-        name: kebabToCapitalizedWords(path),
-        href: `${cumulativePath}`,
-        active: active,
-      };
-    });
-    pathObjArr = [{ name: "Home", href: "/", active: false }, ...pathObjArr];
+    if (typeof window !== "undefined") {
+      let pathname = window.location.pathname;
+      const pathArr = pathname.split("/").filter(Boolean);
+      let cumulativePath = "";
+      let pathObjArr = pathArr.map((path, i) => {
+        cumulativePath += `/${path}`;
+        let active = false;
+        if (pathArr.length - 1 === i) active = true;
+        return {
+          name: kebabToCapitalizedWords(path),
+          href: `${cumulativePath}`,
+          active: active,
+        };
+      });
+      pathObjArr = [{ name: "Home", href: "/", active: false }, ...pathObjArr];
 
-    // let pathsWithFiller = pathObjArr.map((item) => [item, { name: "|", href: "", active: true }]).flat();
-    // pathsWithFiller.pop();
+      // let pathsWithFiller = pathObjArr.map((item) => [item, { name: "|", href: "", active: true }]).flat();
+      // pathsWithFiller.pop();
 
-    return pathObjArr;
+      return pathObjArr;
+    }
   };
   useEffect(() => {
     handlePathname();
@@ -73,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         </div>
         <div className="relative z-[1] min-h-[328px] lg:min-h-[325px] text-white flex flex-col h-full justify-center px-8 lg:p-0 container xl:max-w-7xl mx-auto ">
           <ul className="flex relative z-[2] gap-2" aria-label="Breadcrumb">
-            {handlePathname().map(({ name, href, active }) => {
+            {handlePathname()?.map(({ name, href, active }) => {
               if (active)
                 return (
                   <li key={name} aria-current="page" className="font-bold select-none">

@@ -257,15 +257,15 @@ const IndexPage: React.FC<PageProps> = () => {
   );
 };
 
-export const query = graphql`
-  query ImageQuery($fileName: String!) {
-    file(relativePath: { eq: $fileName }) {
-      childImageSharp {
-        gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query ImageQuery($fileName: String!) {
+//     file(relativePath: { eq: $fileName }) {
+//       childImageSharp {
+//         gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+//       }
+//     }
+//   }
+// `;
 
 export default IndexPage;
 

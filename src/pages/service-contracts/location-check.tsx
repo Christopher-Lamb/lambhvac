@@ -55,7 +55,7 @@ const LocationCheckPage: React.FC<PageProps> = () => {
         <span className="block text-center mb-4">If your specific location is not listed, we regret to inform you that our services do not currently extend to that area.*</span>
         <ul className="grid grid-cols-1 px-4 lg:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {reorderedArray.map((location, i) => {
-            console.log(reorderedArray.length);
+            // console.log(reorderedArray.length);
             return (
               <div className="flex gap-2 items-center font-semibold hover:scale-[1.1] hover:ml-4 hover:md:ml-3 hover:xl:ml-2 hover:underline cursor-pointer">
                 <div className="lamb-bullet rounded-2xl shrink-0" style={{ width: "9px", height: "9px" }} />
